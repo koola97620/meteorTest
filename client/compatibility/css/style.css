@@ -1,0 +1,28 @@
+.feed-main{
+    margin:10px;
+}
+.feed-thead{
+    background-color:#607d8b;
+    color:white;
+}
+
+.topic {
+    style:"width:50%";
+}
+
+.new.badge{
+    position:static;
+
+}
+span.badge.new {
+    font-size:1.0em;
+}
+
+.feed-top{
+    margin: 10px;
+    float: right;
+}
+
+.Feed_title {
+    margin :40px;
+}

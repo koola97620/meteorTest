@@ -1,0 +1,28 @@
+#background
+  script(src="assets/js/jscolor.min.js" type="text/javascript" id="jscolorScript")
+  #login-form
+    .row
+      form.col.s12
+        .row
+          .input-field.col.s12
+            input#name.validate(type='text')
+            label(for='name') 그룹명
+        .row
+          .input-field.col.s12
+            input#private(type="radio" name="isPrivate" value="true")
+            label(for="private") 비공개 그룹
+            input#public(type="radio" name="isPrivate" value="false")
+            label(for="public") 공개 그룹
+        .row
+          .input-field.col.s12
+            input#description.validate(type='text')
+            label(for='description') 그룹설명
+        .row
+          .input-field.col.s12
+            input#themeColor(type="hidden" value="000000")
+            button(class="jscolor {valueElement: 'themeColor'}" type="button")#colorSelector 그룹 테마컬러선택
+        .row
+          .input-field.col.s6
+            button.btn.waves-effect.waves-light#create(type="button") 생성
+          .input-field.col.s6
+            button.btn.waves-effect.waves-purple#reset(type="reset") 초기화

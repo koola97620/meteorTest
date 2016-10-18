@@ -1,0 +1,82 @@
+.header{
+    background-color : #2F4050;
+}
+#view-point{
+    display: flex ;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main{
+    flex: 1 0 auto;
+}
+.footer-color{
+    background-color : #2F4050 !important;
+}
+footer .container .row{
+    text-align: center;
+}
+.footer-copyright p{
+    text-align: center;
+}
+.messageStore tr td:first-child{
+    width: 20%;
+}
+
+.messageStore tr td:nth-child(2){
+    width: 20%;
+}
+.messageStore tr td:nth-child(3){
+    width: 60%;
+}
+
+/* Main Index Page*/
+
+#background {
+    /*background: rgba(255,100,200,0.2);*/
+    height: 1024px;
+    padding: 10px 30px 10px 30px;
+}
+
+#home {
+    height: 1024px;
+    padding: 10px 30px 10px 30px;
+}
+
+
+.kakao-login-button {
+
+}
+
+#socialHelper {
+    border-right: 5px solid #ee6e73;
+    text-align: center;
+}
+
+.social {
+    text-align: center;
+}
+
+.input-field > button {
+    width:100%;
+}
+
+#login-form {
+    width:500px;
+    margin:0 auto;
+    margin-top: 15%;
+}
+
+#signup-form {
+    width:500px;
+    margin:0 auto;
+    margin-top: 15%;
+}
+
+#nav-mobile > li > a {
+    font-size: 1.4rem;
+}
+
+#settings > li > a {
+    font-size: 1.4rem;
+}
+/* Main Index Page*/

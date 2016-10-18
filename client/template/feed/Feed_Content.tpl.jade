@@ -1,0 +1,73 @@
+link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+.Feed_title
+    h5(style = "font-weight:bold") Best way to deploy/run on Raspberry Pi?
+    span.new.badge(data-badge-caption="moblie" style="background-color:teal lighten-2")
+    .divider
+    .section
+        .row
+           .col.s1
+                img.circle(style = "width:50px" src="img/yuna.jpg" alt="" class="circle responsive-img")
+           .col.s10
+                .col-s12
+                    .names.trigger-user-card
+                        span.first.username.staff.admin sashko
+                        span.user-title(style="color:gray") MGD staff
+           .col.s1
+               a(href="#") 1d
+                    .read-state
+        .reqular.contents
+            blockquote
+                | Loving all the polls around here recently, I thought I'd drop in one more.
+                | What is the optimal situation for a web framework?
+                | Should your app start with everything being client/server reactive, and then you turn it off when you don't need it (opt-out)? Or should your app start assuming non-reactive data, and then you add it in where you need it (opt-in)?
+                | Let's call out a few things:
+                | Reactivity is often more expensive to operate than not-reactivity
+                | Reactivity results in a better base user experience, but not always, since UI moving around unexpectedly isn't great
+                | Not all backends support reactive features, but a good number do
+                | Reactivity often saves you from needing to manually update the UI via refetching data, speeding up initial dev time in most cases
+                | If you start building your app assuming full-stack reactivity, it might be really hard to get rid of it later even if that is an option, since you might have built your UI in a way that assumes that feature
+                | So what do you think? I guess this isn't really covered by a poll, so post a comment too!
+        .section
+            nav
+                .nav-wrapper(style="margin:10px")
+                    a.brand-logo(href="#") 3 Replies
+                    ul#nav-mobile.right.hide-on-med-and-down
+                        li
+                            a
+                                i.material-icons favorite
+                        li
+                            a
+                                i.material-icons link
+                        li
+                            a
+                                i.material-icons flag
+                        li
+                            a
+                                i.material-icons bookmark
+                        li
+                            a.modal-trigger(href='#modal2')
+                                i.material-icons reply
+                                |reply
+
+    .divider
+#modal2.modal.bottom-sheet
+    .modal-content(style='height:1500px')
+        .row
+            .col.s12
+                span
+                    i.material-icons reply
+                a(href='#') Best way to deploy/run on Raspberry Pi?
+
+
+        .row
+            form.col.s12
+                .row
+                    .input-field.col.s12
+                        i.material-icons.prefix mode_edit
+                        textarea#icon_prefix2.materialize-textarea
+                        label(for='icon_prefix2') Type here
+
+                a.waves-effect.waves-light.btn()
+                    i.material-icons.left reply
+                    | Reply
+                a.btn-flat#feed-reply-cancel Cancel

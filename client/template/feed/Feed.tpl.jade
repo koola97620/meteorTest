@@ -1,0 +1,48 @@
+.feed-top
+   a.waves-effect.waves-light.btn.modal-trigger(href='#modal1')
+      i.material-icons.left add
+      | New Topic
+.feed-main
+   table.responsive-table.bordered
+      thead.feed-thead
+         tr
+            th.topic(data-field="id") Topic
+            th.data.field Category
+            th.data.field Users
+            th.data.field Replies
+            th.data.field Views
+            th.data.field Activity
+      tbody
+         +each Feeds
+            +Feed_Item
+#modal1.modal.bottom-sheet
+   .modal-content(style='height:1500px')
+      h4 Create a new Topic
+      .row
+         form.col.s12
+            .row
+               .input-field.col.s6
+                  i.material-icons.prefix mode_edit
+                  input#icon_prefix.validate(type='text')
+                  label(for='icon_prefix2') What is the discussion about in one brief sentence?
+
+               .input-field.col.s12.m6
+                  .select-wrapper
+                     span.caret ▼
+                     select
+                        option(value='', disabled='', selected='') Choose your option
+                        option(value='1') Mobile1
+                        option(value='2') help
+                        option(value='3') announce
+                  label Materialize Select
+
+               .row
+                  .input-field.col.s12
+                     i.material-icons.prefix mode_edit
+                     textarea#icon_prefix2.materialize-textarea
+                     label(for='icon_prefix2') Type here
+
+               a.waves-effect.waves-light.btn()
+                  i.material-icons.left add
+                  | Add Topic
+               a.btn-flat#feed-cancel Cancel

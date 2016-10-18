@@ -1,0 +1,49 @@
+#home
+    .groups-content
+        if joinGroups
+            .groups-section
+                .groups-section-header
+                    h3.groups-section-header-name Personal Groups
+                ul.groups-section-list#privateGroup
+                    each joinGroups
+                        li.groups-section-list-item.enterGroup
+                            a.group-tile.waves-effect(style="background-color:{{themecolor}}")
+                                span {{name}}
+            if privatePage
+                .center-align
+                    button.btn-floating#getMorePersonalItem(style="width: 100px; margin:0 auto") more...
+            hr
+        if publicGroups
+            .groups-section
+                .groups-section-header
+                    form
+                        .row
+                            .input-field.col.s10
+                                h3.groups-section-header-name Public Groups
+                            .input-field.col.s2
+                                input#publicSearch(type="search")
+                                label(for="publicSearch")
+                                    i.material-icons search
+                                i.material-icons close
+                ul.groups-section-list#publicGroup
+                    each publicGroups
+                        li.groups-section-list-item.enterGroup
+                            a.group-tile.waves-effect(style="background-color:{{themecolor}}")
+                                span {{name}}
+            if publicPage
+                .center-align
+                    button.btn-floating#getMorePublicItem(style="width: 100px; margin:0 auto") more...
+            hr
+        .groups-section
+            .groups-section-header
+                h3.groups-section-header-name Test
+            ul.groups-section-list
+                li.groups-section-list-item.createGroup
+                    a.group-tile.waves-effect
+                        span Create new group..
+
+#inviteModal.modal
+    .modal-content
+        p 팀초대링크
+    .modal-footer
+        a.modal-close.modal-action.waves-effect.waves-green.btn-flat#acceptInvite 수락

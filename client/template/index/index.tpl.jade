@@ -1,0 +1,24 @@
+#background
+    #login-form
+        .row
+            form.col.s12
+                .row
+                    .input-field.col.s12
+                        input#email.validate(type='text')
+                        label(for='email') UserId or Email
+                .row
+                    .input-field.col.s12
+                        input#password.validate(type='password')
+                        label(for='password') Password
+                .row
+                    .input-field.col.s6
+                        button.btn.waves-effect.waves-light#login Login
+                    .input-field.col.s6
+                        button.btn.waves-effect.waves-purple#signup Signup
+                .row
+                    .input-field.col.s12
+                        blockquote#socialHelper 소셜(SNS)를 통한 회원가입을 원하세요?
+                .row
+                    .input-field.col.s12.social
+                        .fb-login-button(data-max-rows='1', data-size='large', data-show-faces='false', data-auto-logout-link='false')
+                        img#kakao-login-button(src="img/kakao_login_btn_small.png")

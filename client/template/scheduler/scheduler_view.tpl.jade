@@ -1,0 +1,20 @@
+// 스케쥴 상세 조회 / 수정 ( 모달창 )
+.modal.modal-fixed-footer(id='modalView-#{_id}')
+    .modal-content
+        h5.center-align.mb40  스케쥴 상세 조회/수정 ( {{year}}년 {{month}}월 {{day}}일 )
+        .input-field
+            label(for='txtTitle-#{_id}') 제목
+            input.validate(type='text',id='txtTitle-#{_id}',value='#{title}')
+        .input-field
+            label(for='txtDetail-#{_id}') 상세 설명
+            textarea.materialize-textarea(id='txtDetail-#{_id}', length='120') #{detail}
+    .modal-footer
+        a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#') 닫기
+        a.btnEdit.waves-effect.waves-green.btn-flat(href='#') 수정
+script.
+    $(document).ready(function () {
+        Materialize.updateTextFields();
+    });
+
+
+

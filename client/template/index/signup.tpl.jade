@@ -1,0 +1,32 @@
+#background
+    #login-form
+        .row
+            form.col.s12
+                .row
+                    .input-field.col.s12
+                        input#username.validate(type='text')
+                        label(for='username') userId
+                .row
+                    .input-field.col.s12
+                        input#email.validate(type='email')
+                        label(for='email') Email
+                .row
+                    .input-field.col.s12
+                        input#password.validate(type='password')
+                        label(for='password') Password
+                .row
+                    .input-field.col.s12
+                        input#name.validate(type='text')
+                        label(for='name') username
+                .row
+                    .input-field.col.s6
+                        input#company.validate(type='text')
+                        label(for='company') Company(optional)
+                    .input-field.col.s6
+                        input#department.validate(type='text')
+                        label(for='department') department(optional)
+                .row
+                    .input-field.col.s6
+                        button.btn.waves-effect.waves-light#join(type="button") Join
+                    .input-field.col.s6
+                        button.btn.waves-effect.waves-purple#reset(type="reset") Reset

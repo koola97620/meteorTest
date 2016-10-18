@@ -1,0 +1,26 @@
+// 스케쥴은 하루에 최대 3개 까지 등록 가능한 것으로 가정하여 UI를 구성하였음.
+table.mt20.fixedTable
+    thead
+        tr
+            th.schedHeadPadding.center-align(colspan='7')
+                a.mr30.waves-effect.waves-light.btn {{group.name}}
+                a#btnPrev.waves-effect.waves-light.btn(title='이전달') ◀
+                a.waves-effect.waves-light.btn {{scheduler.year}}년 {{scheduler.month}}월
+                a#btnNext.waves-effect.waves-light.btn(title='다음달') ▶
+        tr
+            each dayName in scheduler.dayNames
+                th.schedColRatio.center-align {{dayName}}
+    tbody
+        each scheduler.calendar
+            tr
+                each week
+                    td.schedBorder(class=ternary(holiday 'teal lighten-5' ' '))
+                        .schedCell
+                            .right-align
+                                span.pointer.btnAddForm.grey-text(title='추가', class=ternary(current 'text-darken-4' ' ')) {{dayFormat current month date}}
+                                | {{>scheduler_form}}
+                            each schedule
+                                div.left-align
+                                    a.fr.pointer.btnDel(title='삭제') X
+                                    span.truncate.pointer.btnView(title='수정', class=ternary(holiday 'teal accent-2' 'light-blue lighten-4')) {{title}}
+                                    | {{>scheduler_view}}

@@ -1,0 +1,16 @@
+
+
+script(type='text/javascript').
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+// Modal Trigger
+a.waves-effect.waves-light.btn.modal-trigger(href='#modal1') Modal
+// Modal Structure
+#modal1.modal
+    .modal-content
+        h4 Modal Header
+        p A bunch of text
+    .modal-footer
+        a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Agree

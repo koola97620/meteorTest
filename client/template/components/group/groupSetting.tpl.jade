@@ -1,0 +1,134 @@
+link(href="assets/css/tabs.css" rel="stylesheet" type="text/css")
+.modal-content
+    .row
+        .col.s2
+            ul.settingTabs.tabs
+                li.tab.customtab
+                    a.tablinks(href="#" data-value="page1") Info
+                li.tab.customtab
+                    a.tablinks(href="#" data-value="page2") Members
+                li.tab.customtab
+                    a.tablinks(href="#" data-value="page3") Invite
+                li.tab.customtab
+                    a.tablinks(href="#" data-value="page4") Request
+                li.tab.customtab
+                    a.tablinks(href="#" data-value="page5") Settings
+        .col.s10
+            .tabcontent#page1
+                each groupInfo
+                    .row
+                        .col.s4
+                            p name
+                        .col.s8
+                            p {{name}}
+                    .row
+                        .col.s4
+                            p 공개여부
+                        .col.s8
+                            p {{isPrivate this.isPrivate}}
+                    .row
+                        .col.s4
+                            p 그룹 멤버수
+                        .col.s8
+                            p {{arrayCount members}} 명
+                    .row
+                        .col.s4
+                            p 그룹 설명
+                        .col.s8
+                            p {{description}}
+                    .row
+                        .col.s4
+                            p 관심순위
+                        .col.s8
+                            p 추후 추천수로 랭킹구현
+                    .row
+                        .col.s4
+                            p 추천수(좋아요수)
+                        .col.s8
+                            p {{recommend}}
+                    .row
+                        .col.s4
+                            p 생성일
+                        .col.s8
+                            p {{formatDate createdAt}}
+
+            .tabcontent#page2
+                table.responsive-table
+                    tr
+                        th
+                        th 아이디
+                        th 이름
+                        th 이메일
+                        th 관리버튼
+                    each searchResult
+                        tr.picker__list-item--highlighted
+                            td  {{@index}}
+                            td  {{username}}
+                            td  {{profile.name}}
+                            each emails
+                                td {{address}}
+                            td
+                                button#vanModal 내보내기
+
+
+            .tabcontent#page3
+                .row
+                    .col.s12
+                        form
+                            .input-field.col.s6(style="margin-left:20%;")
+                                input#memberSearch(type="search" placeholder="uesrId or name")
+                                label(for="memberSearch")
+                                    i.material-icons search
+                                i.material-icons close
+                    .row.s12
+                        #resultField
+                            if searchResultCount
+                                each searchResult
+                                    p {{username}}({{profile.name}})
+                                        span.btnInvite.waves-effect.waves-light.btn 초대
+                            else
+                                unless isSearch
+                                    span 검색결과가 없습니다. 검색란에 메일주소 입력 후 초대메일을 보내세요.
+                                    button#inviteEmail 초대
+
+            .tabcontent#page4
+                p 스케쥴변동요청 (Group 스키마 변경하기 request 추가..)
+
+            .tabcontent#page5
+                each groupInfo
+                    .row
+                        .col.s4
+                            p name
+                        .col.s8
+                            p {{name}}
+                    .row
+                        .col.s4
+                            p 공개여부
+                        .col.s8
+                            p {{isPrivate this.isPrivate}}
+                    .row
+                        .col.s4
+                            p 그룹 설명
+                        .col.s8
+                            p {{description}}
+                    .row
+                        .col.s4
+                            p themeColor
+                        .col.s8
+                            p {{recommend}}
+                    .row
+                        .col.s4
+                            p 관리자 변경
+                        .col.s8
+                            p 선택버튼
+                    .row
+                        .col.s4
+                            p 그룹삭제
+                        .col.s8
+                            p 삭제버튼
+                    .row
+                        .col.s12
+//추후 css 위치잡기.
+.modal-footer
+    a.modal-action.modal-close.waves-effect.waves-green.btn-flat#settingModal_close Close
+

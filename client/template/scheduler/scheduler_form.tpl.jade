@@ -1,0 +1,15 @@
+// 스케쥴 신규 등록 폼 ( 모달창 )
+.modal.modal-fixed-footer(id='modalAdd-{{ymd}}')
+    .modal-content
+        h5.center-align.mb20  스케쥴 등록 ( {{year}}년 {{month}}월 {{date}}일 )
+        .input-field.left-align
+            label(for='txtTitle-{{ymd}}') 제목
+            input.validate(type='text',id='txtTitle-{{ymd}}')
+        .input-field.left-align
+            label(for='txtDetail-{{ymd}}') 상세 설명
+            textarea.materialize-textarea(id='txtDetail-{{ymd}}', length='120')
+    .modal-footer
+        a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#') 닫기
+        a.btnAdd.waves-effect.waves-green.btn-flat(href='#') 등록
+
+

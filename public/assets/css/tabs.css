@@ -1,0 +1,64 @@
+/* Style the list */
+ul.settingTabs {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    height:100% !important;
+    vertical-align: middle !important;
+    background-color: inherit !important;
+}
+
+.customtab {
+    width:100% !important;
+}
+
+.customtab > a {
+    padding-top : 0 !important;
+}
+
+/* Float the list items side by side */
+/*ul.settingTabs li {float: left;}*/
+
+/* Style the links inside the list items */
+ul.settingTabs li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.settingTabs li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.settingTabs li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    margin-left:10px;
+}
+
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

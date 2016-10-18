@@ -1,0 +1,14 @@
+.schedHeadPadding { padding:3px 5px; }
+.schedBorder { border:1px solid #bdbdbd; padding:0 5px; }
+.schedCell { height:90px; overflow:hidden; }
+.schedColRatio { width:14%; padding:5px 5px; }
+.pointer { cursor:pointer; }
+
+/* margin */
+.mt20 { margin-top:20px !important; }
+.mb20 { margin-bottom:20px !important; }
+.mb40 { margin-bottom:40px !important; }
+.mr30 { margin-right:30px !important; }
+
+.fr {float:right;}
+.fixedTable {table-layout:fixed;}

@@ -1,0 +1,128 @@
+link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+header
+    nav.nav-wrapper.header
+        a.brand-logo(href='{{pathFor "home"}}') TEMP
+        ul#nav-mobile.right.hide-on-med-and-down
+            unless currentPath
+                if isJoin
+                    li
+                        a.btn-flat.waves-effect.waves-light#joinGroup(style="background-color:#26a69a; color:white;") 가입하기
+            li
+                a.dropdown-button(href='#' data-activates="settings" data-beloworigin="true") {{user.username}}({{user.profile.name}}님)
+            li
+                a#btnNoticeNavi(href='#', data-activates='slide-out')
+                    i.material-icons add_alert
+            unless currentPath
+                li
+                    a(href='{{pathFor "scheduler"}}') SCHEDULER
+                li
+                    a(href='{{pathFor "feed"}}') FEED
+                if isAdmin
+                    li
+                        a#settingNav
+                            i.material-icons settings
+            li
+                a#btnChattingNavi(href='#',data-activates='slide-out2')
+                    i.material-icons reorder
+
+// Dropdown
+ul#settings.dropdown-content
+    li
+        a(href="#") MYPAGE
+    li.divider
+    li.divider
+    li
+        a(href="#") NOTES
+    li
+        a(href="#") MESSAGES
+    li.divider
+    unless currentPath
+        li
+            a(href="#")#leaveGroup Leave Group
+    li
+        a(href="#")#logout LOGOUT
+
+
+
+
+
+// Modal Structure
+if sesstingModal
+    #groupSetting.modal
+        +groupSetting
+
+#msgStroeModal.modal
+    div.modal-content
+        h4 Message Box
+        table.striped.bordered.messageStore
+            tr
+                td
+                    i.medium.material-icons perm_identity
+                td 문시언
+                td 안녕하세요...add Read More
+                td
+                    a.modal-trigger(href='#msgSendModal').waves-effect.waves-light.btn SendMessage
+
+            tr
+                td
+                    i.medium.material-icons perm_identity
+                td 문시언
+                td 안녕하세요...add Read More
+                td
+                    a.modal-trigger(href='#msgSendModal').waves-effect.waves-light.btn SendMessage
+            tr
+                td
+                    i.medium.material-icons perm_identity
+                td 문시언
+                td 안녕하세요...add Read More
+                td
+                    a.modal-trigger(href='#msgSendModal').waves-effect.waves-light.btn SendMessage
+    div.modal-footer
+        a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Cancel
+
+div#msgSendModal.modal
+    div.modal-content
+        h4 Message Send
+            p send Email
+    div.modal-footer
+        a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Cancel
+        a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') send
+
+
+// 알람 사이드 네비게이션
+ul#slide-out.side-nav
+    li
+        a.waves-effect.waves-light.btn(href='#!') Notices
+    li
+        .divider
+    each notice
+        li
+            a.truncate(href='#!')
+                span {{event}}:
+                span.light-blue.lighten-4 {{content}}
+        if isInvite
+            li.center-align
+                span.btnAccept.waves-effect.waves-light.btn 수락
+                span &nbsp;
+                span.btnReject.waves-effect.waves-light.btn 거절
+        li
+            .divider
+
+// 채팅 사이드 네비게이션
+ul#slide-out2.side-nav
+    li
+        a.waves-effect.waves-light.btn(href='#!') Chatting
+    li
+        .divider
+    each notice
+        li
+            a.truncate(href='#!')
+                span {{event}}:
+                span.light-blue.lighten-4 {{content}}
+        if isInvite
+            li.center-align
+                span.btnAccept.waves-effect.waves-light.btn 수락
+                span &nbsp;
+                span.btnReject.waves-effect.waves-light.btn 거절
+        li
+            .divider
